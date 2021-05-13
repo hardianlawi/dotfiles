@@ -37,6 +37,7 @@ then
     echo "Installing miniconda..."
     wget https://github.com/conda-forge/miniforge/releases/download/4.10.0-0/Mambaforge-MacOSX-arm64.sh
     bash Mambaforge-MacOSX-arm64.sh
+    rm Mambaforge-MacOSX-arm64.sh
 fi
 
 # https://github.com/carlhuda/janus
