@@ -12,8 +12,14 @@ brew install wget
 brew install mas
 brew install node
 brew install macvim
+brew install autojump
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 brew install --cask brave-browser
 brew install --cask alfred
@@ -38,6 +44,7 @@ then
     wget https://github.com/conda-forge/miniforge/releases/download/4.10.0-0/Mambaforge-MacOSX-arm64.sh
     bash Mambaforge-MacOSX-arm64.sh
     rm Mambaforge-MacOSX-arm64.sh
+    echo "Please run `conda config --set changeps1 True` to turn off the conda environment display"
 fi
 
 # https://github.com/carlhuda/janus
