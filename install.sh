@@ -9,6 +9,8 @@ brew install git
 brew install curl
 brew install wget
 brew install mas
+brew install node
+brew install macvim
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -33,3 +35,6 @@ if ! command -v conda &> /dev/null
 then
     bash Miniconda3-latest-MacOSX-x86_64.sh
 fi
+
+# https://github.com/carlhuda/janus
+curl -L https://bit.ly/janus-bootstrap | bash
