@@ -35,8 +35,8 @@ mas install 823766827
 if ! command -v conda &> /dev/null
 then
     echo "Installing miniconda..."
-    wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.9.2-MacOSX-x86_64.sh
-    bash Miniconda3-py39_4.9.2-MacOSX-x86_64.sh
+    wget https://github.com/conda-forge/miniforge/releases/download/4.10.0-0/Mambaforge-MacOSX-arm64.sh
+    bash Mambaforge-MacOSX-arm64.sh
 fi
 
 # https://github.com/carlhuda/janus
