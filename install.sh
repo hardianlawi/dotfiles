@@ -1,9 +1,10 @@
 #!/bin/bash
+set -ex
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew tap caskroom/cask
-brew tap caskroom/versions
+brew tap homebrew/cask
+brew tap homebrew/cask-versions
 
 brew install git
 brew install curl
@@ -19,7 +20,7 @@ brew install --cask alfred
 brew install --cask rectangle
 brew install --cask franz
 brew install --cask spotify
-brew install --cask sublime-text3
+brew install --cask sublime-text
 brew install --cask iterm2
 brew install --cask visual-studio-code
 brew install --cask notion
@@ -33,7 +34,9 @@ mas install 823766827
 
 if ! command -v conda &> /dev/null
 then
-    bash Miniconda3-latest-MacOSX-x86_64.sh
+    echo "Installing miniconda..."
+    wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.9.2-MacOSX-x86_64.sh
+    bash Miniconda3-py39_4.9.2-MacOSX-x86_64.sh
 fi
 
 # https://github.com/carlhuda/janus
