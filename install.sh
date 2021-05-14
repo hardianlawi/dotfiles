@@ -32,6 +32,7 @@ brew install --cask visual-studio-code
 brew install --cask notion
 brew install --cask slack
 brew install --cask docker
+brew install --cask selfcontrol
 
 # Install Focus-To-Do
 mas install 1258530160
