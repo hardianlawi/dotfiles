@@ -33,6 +33,9 @@ brew install --cask notion
 brew install --cask slack
 brew install --cask docker
 brew install --cask selfcontrol
+brew install --cask trader-workstation
+brew install --cask zoom
+brew install --cask wechat
 
 # Install Focus-To-Do
 mas install 1258530160
