@@ -43,6 +43,9 @@ mas install 1258530160
 # Install OneDrive
 mas install 823766827
 
+# Install OneNote
+mas install 784801555
+
 if ! command -v conda &> /dev/null
 then
     echo "Installing miniconda..."
