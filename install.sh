@@ -37,6 +37,7 @@ brew install --cask selfcontrol
 brew install --cask trader-workstation
 brew install --cask zoom
 brew install --cask wechat
+brew install --cask ankiapp-anki
 
 # Install Focus-To-Do
 mas install 1258530160
