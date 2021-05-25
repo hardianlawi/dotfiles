@@ -13,6 +13,7 @@ brew install mas
 brew install node
 brew install macvim
 brew install autojump
+brew install pre-commit
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
