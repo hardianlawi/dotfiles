@@ -32,10 +32,7 @@ install_miniconda () {
     fi
 }
 
-setup_terminal () {
-
-    install_commands
-    install_miniconda
+customize_terminal () {
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
@@ -74,5 +71,7 @@ install_applications () {
     mas install 784801555
 }
 
-setup_terminal
+install_commands
+install_miniconda
+customize_terminal
 install_applications
