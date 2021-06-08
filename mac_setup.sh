@@ -14,6 +14,7 @@ brew install node
 brew install macvim
 brew install autojump
 brew install pre-commit
+brew install thefuck
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
