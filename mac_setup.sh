@@ -7,7 +7,7 @@ setup_brew () {
     brew tap homebrew/cask-versions
 }
 
-install_commands () {
+setup_environment () {
     setup_brew
 
     brew install git
@@ -32,9 +32,25 @@ install_miniconda () {
     fi
 }
 
+update_zshrc () {
+
+    sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="spaceship"/g' $HOME/.zshrc
+    sed -i 's/plugins=(git)/plugins=(autojump git history z zsh-autosuggestions kubectl)/g' $HOME/.zshrc
+
+    echo "" >> $HOME/.zshrc
+    echo "\ncode () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}\n" >> $HOME/.zshrc
+    echo "" >> $HOME/.zshrc
+
+}
+
 customize_terminal () {
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    update_zshrc
+
+    source $HOME/.zshrc
+
     git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
     ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -71,7 +87,7 @@ install_applications () {
     mas install 784801555
 }
 
-install_commands
-install_miniconda
+setup_environment
 customize_terminal
+install_miniconda
 install_applications
