@@ -87,6 +87,23 @@ install_applications () {
     mas install 784801555
 }
 
+setup_jupyter () {
+    jupyter notebook --generate-config
+
+    pip install jupyter_contrib_nbextensions
+    pip install jupyter_nbextensions_configurator
+    pip install ipywidgets
+    pip install ipykernel
+
+    jupyter contrib nbextension install --user
+    jupyter nbextension enable --py widgetsnbextension
+    jupyter nbextension enable highlight_selected_word/main
+    jupyter nbextension enable toc2/main
+    jupyter nbextension enable codefolding/main
+    jupyter nbextension enable collapsible_headings/main
+    jupyter nbextension enable execute_time/ExecuteTime
+}
+
 setup_environment
 customize_terminal
 install_miniconda
