@@ -28,7 +28,7 @@ install_miniconda () {
         wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh
         bash Miniforge3-MacOSX-arm64.sh
         rm Miniforge3-MacOSX-arm64.sh
-        echo "Please run `conda config --set changeps1 True` to turn off the conda environment display"
+        echo "Please run `conda config --set changeps1 False` to turn off the conda environment display"
     fi
 }
 
