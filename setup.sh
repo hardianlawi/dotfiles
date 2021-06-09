@@ -1,13 +1,6 @@
 #!/bin/bash
 set -ex
 
-setup_environment () {
-    sudo apt update
-    sudo apt install -y zsh rake wget git autojump \
-        make gcc build-essential tmux g++ htop
-    curl https://get.docker.com | bash
-}
-
 update_zshrc () {
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="spaceship"/g' $HOME/.zshrc
     sed -i 's/plugins=(git)/plugins=(autojump git history z zsh-autosuggestions kubectl)/g' $HOME/.zshrc
@@ -33,24 +26,35 @@ customize_terminal () {
 }
 
 install_miniconda () {
+    PREFIX="https://github.com/conda-forge/miniforge/releases/latest/download/"
+    if [[ "$1" == "mac" ]]
+    then
+        FILE="Miniforge3-MacOSX-arm64.sh"
+    elif [[ "$1" == "ubuntu" ]]
+    then
+        FILE="Miniforge3-Linux-x86_64.sh"
+    else
+        exit 1
+    fi
+
     if ! command -v conda &> /dev/null
     then
         echo "Installing miniconda..."
-        wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh
-        bash Miniforge3-MacOSX-arm64.sh
-        rm Miniforge3-MacOSX-arm64.sh
-        echo "Please run `conda config --set changeps1 True` to turn off the conda environment display"
+        wget ${PREFIX}${FILE}
+        bash ${FILE}
+        rm ${FILE}
+        echo "Please run `conda config --set changeps1 False` to turn off the conda environment display"
     fi
 }
 
 setup_jupyter () {
-    jupyter notebook --generate-config
-
+    pip install jupyter
     pip install jupyter_contrib_nbextensions
     pip install jupyter_nbextensions_configurator
     pip install ipywidgets
     pip install ipykernel
 
+    jupyter notebook --generate-config
     jupyter contrib nbextension install --user
     jupyter nbextension enable --py widgetsnbextension
     jupyter nbextension enable highlight_selected_word/main
@@ -59,7 +63,3 @@ setup_jupyter () {
     jupyter nbextension enable collapsible_headings/main
     jupyter nbextension enable execute_time/ExecuteTime
 }
-
-setup_environment
-customize_terminal
-install_miniconda
