@@ -49,6 +49,7 @@ install_miniconda () {
 
 setup_jupyter () {
     pip install jupyter
+    pip install jupyter-lab
     pip install jupyter_contrib_nbextensions
     pip install jupyter_nbextensions_configurator
     pip install ipywidgets
