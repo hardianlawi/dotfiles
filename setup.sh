@@ -54,6 +54,8 @@ setup_jupyter () {
     pip install jupyter_nbextensions_configurator
     pip install ipywidgets
     pip install ipykernel
+    pip install jupytext
+    pip install papermill
 
     jupyter notebook --generate-config
     jupyter contrib nbextension install --user
@@ -63,4 +65,13 @@ setup_jupyter () {
     jupyter nbextension enable codefolding/main
     jupyter nbextension enable collapsible_headings/main
     jupyter nbextension enable execute_time/ExecuteTime
+
+    jupyter labextension install jupyterlab-drawio --no-build
+    jupyter labextension install @jupyterlab/toc --no-build
+    jupyter labextension install @jupyterlab/debugger --no-build
+    jupyter labextension install jupyterlab-topbar-extension --no-build
+    jupyter labextension install jupyterlab-spreadsheet --no-build
+    # jupyter labextension install jupyterlab-execute-time
+
+    jupyter lab build
 }
