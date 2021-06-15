@@ -48,8 +48,8 @@ install_miniconda () {
 }
 
 setup_jupyter () {
+    # Jupyter Notebook
     pip install jupyter
-    pip install jupyter-lab
     pip install jupyter_contrib_nbextensions
     pip install jupyter_nbextensions_configurator
     pip install ipywidgets
@@ -66,11 +66,20 @@ setup_jupyter () {
     jupyter nbextension enable collapsible_headings/main
     jupyter nbextension enable execute_time/ExecuteTime
 
+    # Jupyter Lab
+    pip install jupyter-lab
+
+    # https://github.com/krassowski/jupyterlab-lsp
+    pip install jupyterlab-lsp
+    pip install 'python-lsp-server[all]'
+
     jupyter labextension install jupyterlab-drawio --no-build
     jupyter labextension install @jupyterlab/toc --no-build
     jupyter labextension install @jupyterlab/debugger --no-build
     jupyter labextension install jupyterlab-topbar-extension --no-build
     jupyter labextension install jupyterlab-spreadsheet --no-build
+
+    # jupyter labextension install @wallneradam/trailing_space_remover
     # jupyter labextension install jupyterlab-execute-time
 
     jupyter lab build
