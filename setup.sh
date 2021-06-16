@@ -6,7 +6,7 @@ update_zshrc () {
     sed -i 's/plugins=(git)/plugins=(autojump git history z zsh-autosuggestions kubectl)/g' $HOME/.zshrc
 
     echo "" >> $HOME/.zshrc
-    echo "code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args \$* ;}" >> $HOME/.zshrc
+    echo "code () { VSCODE_CWD="\$PWD" open -n -b "com.microsoft.VSCode" --args \$* ;}" >> $HOME/.zshrc
     echo "" >> $HOME/.zshrc
 }
 
@@ -45,8 +45,11 @@ install_miniconda () {
         wget ${PREFIX}${FILE}
         bash ${FILE}
         rm ${FILE}
-        echo "Please run `conda config --set changeps1 False` to turn off the conda environment display"
+        conda config --set changeps1 False
+        echo "Running `conda config --set changeps1 False` to turn off the conda environment display"
     fi
+
+    source $HOME/.zshrc
 }
 
 setup_jupyter () {
@@ -69,7 +72,7 @@ setup_jupyter () {
     jupyter nbextension enable execute_time/ExecuteTime
 
     # Jupyter Lab
-    pip install jupyter-lab
+    pip install jupyterlab
 
     # https://github.com/krassowski/jupyterlab-lsp
     pip install jupyterlab-lsp
