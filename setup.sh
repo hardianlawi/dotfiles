@@ -1,6 +1,11 @@
 #!/bin/bash
 set -ex
 
+setup_git_config () {
+    git config --global user.name hardianlawi
+    git config --global user.email hardianlawi@gmail.com
+}
+
 update_zshrc () {
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="spaceship"/g' $HOME/.zshrc
     sed -i 's/plugins=(git)/plugins=(autojump git history z zsh-autosuggestions kubectl)/g' $HOME/.zshrc
