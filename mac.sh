@@ -22,6 +22,8 @@ setup_environment () {
     brew install pre-commit
     brew install thefuck
     brew install tmux
+
+    set_git_config
 }
 
 install_applications () {

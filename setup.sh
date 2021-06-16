@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 
-setup_git_config () {
+set_git_config () {
     git config --global user.name hardianlawi
     git config --global user.email hardianlawi@gmail.com
 }

@@ -12,6 +12,8 @@ setup_environment () {
     sudo apt install -y zsh rake wget git autojump \
         make gcc build-essential tmux g++ htop nodejs
 
+    set_git_config
+
     curl https://get.docker.com | bash
 
     ssh-keygen -t rsa -b 4096 -C "hardianlawi@gmail.com"
