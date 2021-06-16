@@ -54,6 +54,7 @@ install_applications () {
 
 setup_environment
 install_applications
+install_zsh
 customize_terminal
 install_miniconda "mac"
 setup_jupyter

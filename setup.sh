@@ -10,11 +10,13 @@ update_zshrc () {
     echo "" >> $HOME/.zshrc
 }
 
+install_zsh () {
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+}
+
 customize_terminal () {
     # https://github.com/carlhuda/janus
     curl -L https://bit.ly/janus-bootstrap | bash
-
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
     update_zshrc
 
