@@ -21,6 +21,7 @@ setup_environment () {
     brew install autojump
     brew install pre-commit
     brew install thefuck
+    brew install tmux
 }
 
 install_applications () {
