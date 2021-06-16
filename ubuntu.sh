@@ -13,6 +13,8 @@ setup_environment () {
         make gcc build-essential tmux g++ htop nodejs
 
     curl https://get.docker.com | bash
+
+    ssh-keygen -t rsa -b 4096 -C "hardianlawi@gmail.com"
 }
 
 setup_environment
