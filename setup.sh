@@ -11,6 +11,9 @@ update_zshrc () {
 }
 
 customize_terminal () {
+    # https://github.com/carlhuda/janus
+    curl -L https://bit.ly/janus-bootstrap | bash
+
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
     update_zshrc
@@ -20,9 +23,6 @@ customize_terminal () {
     git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
     ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-    # https://github.com/carlhuda/janus
-    curl -L https://bit.ly/janus-bootstrap | bash
 }
 
 install_miniconda () {
