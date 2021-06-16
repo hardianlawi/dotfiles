@@ -6,7 +6,7 @@ update_zshrc () {
     sed -i 's/plugins=(git)/plugins=(autojump git history z zsh-autosuggestions kubectl)/g' $HOME/.zshrc
 
     echo "" >> $HOME/.zshrc
-    echo "\ncode () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}\n" >> $HOME/.zshrc
+    echo "code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}" >> $HOME/.zshrc
     echo "" >> $HOME/.zshrc
 }
 
