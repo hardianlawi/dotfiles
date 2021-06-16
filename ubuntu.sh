@@ -10,8 +10,7 @@ setup_environment () {
 
     sudo apt update
     sudo apt install -y zsh rake wget git autojump \
-        make gcc build-essential tmux g++ htop \
-        nodejs npm
+        make gcc build-essential tmux g++ htop nodejs
 
     curl https://get.docker.com | bash
 }
