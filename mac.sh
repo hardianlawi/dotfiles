@@ -12,6 +12,7 @@ setup_brew () {
 setup_environment () {
     setup_brew
 
+    brew install golang
     brew install git
     brew install curl
     brew install wget
@@ -43,6 +44,7 @@ install_applications () {
     brew install --cask zoom
     brew install --cask wechat
     brew install --cask anki
+    brew install --cask whatsapp
 
     # Install Focus-To-Do
     mas install 1258530160
