@@ -20,11 +20,6 @@ setup_environment () {
 }
 
 setup_environment
-
-# Remove password requirement
-sudo sed s/required/sufficient/g -i /etc/pam.d/chsh
-
 install_zsh
 customize_terminal
 install_miniconda "ubuntu"
-setup_jupyter
