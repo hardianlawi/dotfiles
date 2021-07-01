@@ -23,13 +23,13 @@ customize_terminal () {
     # https://github.com/carlhuda/janus
     curl -L https://bit.ly/janus-bootstrap | bash
 
-    update_zshrc
-
-    source $HOME/.zshrc
-
     git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
     ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+    update_zshrc
+
+    source $HOME/.zshrc
 }
 
 install_miniconda () {
@@ -50,7 +50,6 @@ install_miniconda () {
         wget ${PREFIX}${FILE}
         bash ${FILE}
         rm ${FILE}
-        conda config --set changeps1 False
         echo "Running `conda config --set changeps1 False` to turn off the conda environment display"
     fi
 
