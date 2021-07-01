@@ -19,3 +19,10 @@ For Mac,
 chsh -s $(which zsh)
 bash mac.sh
 ```
+
+After restarting your terminal,
+
+```bash
+conda config --set changeps1 False
+bash setup.sh && setup_jupyter
+```
