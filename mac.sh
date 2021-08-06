@@ -23,6 +23,7 @@ setup_environment () {
     brew install pre-commit
     brew install thefuck
     brew install tmux
+    brew install git-lfs
 
     set_git_config
 }

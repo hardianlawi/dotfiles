@@ -7,10 +7,12 @@ setup_environment () {
     # Latest NodeJs
     # https://github.com/nodesource/distributions
     curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+    curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 
     sudo apt update
-    sudo apt install -y zsh rake wget git autojump \
-        make gcc build-essential tmux g++ htop nodejs
+    sudo apt install -y zsh rake wget autojump \
+        make gcc build-essential tmux g++ htop nodejs \
+        git git-lfs
 
     set_git_config
 
