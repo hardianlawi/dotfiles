@@ -74,6 +74,12 @@ setup_jupyter () {
     jupyter nbextension enable codefolding/main
     jupyter nbextension enable collapsible_headings/main
     jupyter nbextension enable execute_time/ExecuteTime
+    
+    # https://stackoverflow.com/a/61784882
+    jupyter labextension install jupyterlab-plotly
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget
+
+
 
     # Jupyter Lab
     pip install jupyterlab
