@@ -78,9 +78,8 @@ setup_jupyter () {
     # https://stackoverflow.com/a/61784882
     jupyter labextension install jupyterlab-plotly
     jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget
-
-
-
+    jupyter labextension install @ryantam626/jupyterlab_code_formatter
+    
     # Jupyter Lab
     pip install jupyterlab
 
