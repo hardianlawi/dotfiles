@@ -9,6 +9,9 @@ setup_environment () {
     curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
     curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 
+    # To get latest version of git
+    sudo add-apt-repository ppa:git-core/ppa -y
+    
     sudo apt update
     sudo apt install -y zsh rake wget autojump \
         make gcc build-essential tmux g++ htop nodejs \
