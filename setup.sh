@@ -65,33 +65,26 @@ setup_jupyter () {
     pip install ipykernel
     pip install jupytext
     pip install papermill
-
-    jupyter notebook --generate-config
-    jupyter contrib nbextension install --user
-    jupyter nbextension enable --py widgetsnbextension
-    jupyter nbextension enable highlight_selected_word/main
-    jupyter nbextension enable toc2/main
-    jupyter nbextension enable codefolding/main
-    jupyter nbextension enable collapsible_headings/main
-    jupyter nbextension enable execute_time/ExecuteTime
+    pip install black
+    pip install isort
     
     # https://stackoverflow.com/a/61784882
     jupyter labextension install jupyterlab-plotly
     jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget
-    jupyter labextension install @ryantam626/jupyterlab_code_formatter
     
     # Jupyter Lab
     pip install jupyterlab
-
+    pip install jupyterlab-code-formatter
+    
     # https://github.com/krassowski/jupyterlab-lsp
     pip install jupyterlab-lsp
     pip install 'python-lsp-server[all]'
 
-    jupyter labextension install jupyterlab-drawio --no-build
-    jupyter labextension install @jupyterlab/toc --no-build
-    jupyter labextension install @jupyterlab/debugger --no-build
-    jupyter labextension install jupyterlab-topbar-extension --no-build
-    jupyter labextension install jupyterlab-spreadsheet --no-build
+#     jupyter labextension install jupyterlab-drawio --no-build
+#     jupyter labextension install @jupyterlab/toc --no-build
+#     jupyter labextension install @jupyterlab/debugger --no-build
+#     jupyter labextension install jupyterlab-topbar-extension --no-build
+#     jupyter labextension install jupyterlab-spreadsheet --no-build
 
     # jupyter labextension install @wallneradam/trailing_space_remover
     # jupyter labextension install jupyterlab-execute-time
