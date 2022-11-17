@@ -57,6 +57,16 @@ install_miniconda () {
     source $HOME/.zshrc
 }
 
+install_poetry () {
+    curl -sSL https://install.python-poetry.org | python3 -
+    
+    echo "" >> $HOME/.zshrc
+    echo "export PATH=/home/ubuntu/.local/bin:$PATH" >> $HOME/.zshrc
+    echo "" >> $HOME/.zshrc
+    
+    source $HOME/.zshrc
+}
+
 setup_jupyter () {
     # Jupyter Notebook
     pip install jupyter
