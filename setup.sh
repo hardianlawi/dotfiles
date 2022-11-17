@@ -67,7 +67,13 @@ install_poetry () {
     source $HOME/.zshrc
 }
 
-setup_jupyter () {
+setup_miniconda_root_environment () {
+
+    pip install kaggle
+    pip install flake8
+    pip install black
+    pip install isort
+
     # Jupyter Notebook
     pip install jupyter
     pip install jupyter_contrib_nbextensions
@@ -76,12 +82,6 @@ setup_jupyter () {
     pip install ipykernel
     pip install jupytext
     pip install papermill
-    pip install black
-    pip install isort
-    
-    # https://stackoverflow.com/a/61784882
-    jupyter labextension install jupyterlab-plotly
-    jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget
     
     # Jupyter Lab
     pip install jupyterlab
@@ -90,12 +90,16 @@ setup_jupyter () {
     # https://github.com/krassowski/jupyterlab-lsp
     pip install jupyterlab-lsp
     pip install 'python-lsp-server[all]'
+    
+    # https://stackoverflow.com/a/61784882
+    # jupyter labextension install jupyterlab-plotly
+    # jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget
 
-#     jupyter labextension install jupyterlab-drawio --no-build
-#     jupyter labextension install @jupyterlab/toc --no-build
-#     jupyter labextension install @jupyterlab/debugger --no-build
-#     jupyter labextension install jupyterlab-topbar-extension --no-build
-#     jupyter labextension install jupyterlab-spreadsheet --no-build
+    # jupyter labextension install jupyterlab-drawio --no-build
+    # jupyter labextension install @jupyterlab/toc --no-build
+    # jupyter labextension install @jupyterlab/debugger --no-build
+    # jupyter labextension install jupyterlab-topbar-extension --no-build
+    # jupyter labextension install jupyterlab-spreadsheet --no-build
 
     # jupyter labextension install @wallneradam/trailing_space_remover
     # jupyter labextension install jupyterlab-execute-time
