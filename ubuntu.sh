@@ -21,7 +21,7 @@ setup_environment () {
 
     curl https://get.docker.com | bash
 
-    ssh-keygen -t rsa -b 4096 -C "hardianlawi@gmail.com"
+#     ssh-keygen -t rsa -b 4096 -C "hardianlawi@gmail.com"
 }
 
 setup_environment
