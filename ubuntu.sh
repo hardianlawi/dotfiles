@@ -28,3 +28,4 @@ setup_environment
 install_zsh
 customize_terminal
 install_miniconda "ubuntu"
+install_poetry
