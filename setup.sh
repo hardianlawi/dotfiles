@@ -13,6 +13,12 @@ update_zshrc () {
     echo "" >> $HOME/.zshrc
     echo "code () { VSCODE_CWD="\$PWD" open -n -b "com.microsoft.VSCode" --args \$* ;}" >> $HOME/.zshrc
     echo "" >> $HOME/.zshrc
+
+    # Enable brew command autocompletion
+    # https://github.com/orgs/Homebrew/discussions/4227#discussioncomment-7069092
+    echo "" >> $HOME/.zshrc
+    echo "eval "$(/opt/homebrew/bin/brew shellenv)"" >> $HOME/.zshrc
+    echo "" >> $HOME/.zshrc
 }
 
 install_zsh () {
