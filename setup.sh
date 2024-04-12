@@ -84,12 +84,12 @@ setup_miniconda_root_environment () {
 
     # Jupyter Notebook
     pip install jupyter
-    pip install jupyter_contrib_nbextensions
-    pip install jupyter_nbextensions_configurator
+    # pip install jupyter_contrib_nbextensions
+    # pip install jupyter_nbextensions_configurator
     pip install ipywidgets
     pip install ipykernel
-    pip install jupytext
-    pip install papermill
+    # pip install jupytext
+    # pip install papermill
     
     # Jupyter Lab
     pip install jupyterlab
