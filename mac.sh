@@ -62,3 +62,8 @@ install_applications
 install_zsh
 customize_terminal
 install_miniconda "mac"
+
+# https://superuser.com/questions/670252/cmdtab-app-switcher-is-on-the-wrong-monitor
+# TODO: Find better solution
+defaults write com.apple.dock appswitcher-all-displays -bool true
+killall Dock
