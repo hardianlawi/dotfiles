@@ -14,9 +14,7 @@ setup_environment () {
 
     brew install golang
     brew install git
-    brew install curl
     brew install wget
-    brew install mas
     brew install node
     brew install macvim
     brew install autojump
@@ -43,22 +41,12 @@ install_applications () {
     brew install --cask selfcontrol
     brew install --cask trader-workstation
     brew install --cask zoom
-    brew install --cask wechat
     brew install --cask anki
     brew install --cask whatsapp
-
-    # Install Focus-To-Do
-    mas install 1258530160
-
-    # Install OneDrive
-    mas install 823766827
-
-    # Install OneNote
-    mas install 784801555
 }
 
 setup_environment
-install_applications
+# install_applications
 install_zsh
 customize_terminal
 install_miniconda "mac"
