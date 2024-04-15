@@ -31,6 +31,8 @@ customize_terminal () {
     # After installing, do this https://github.com/carlhuda/janus/issues/716#issuecomment-1487874579 to fix a minor issue
     # TODO: Include the fix in this script
     curl -L https://bit.ly/janus-bootstrap | bash
+    cd ~/.vim/janus/vim/tools
+    git submodule update --remote tlib
 
     git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
     ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
